@@ -1,0 +1,13 @@
+name: CI
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: スクレイピング
+        run: |
+          git clone https://github.com/yuzuru-program/scraping-python-yahoo.git ci
+          cd ci
+          pip3 install requests beautifulsoup4
+          python3 index.py
